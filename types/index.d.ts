@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable no-unused-vars */
 
 declare type SearchParamProps = {
@@ -8,14 +9,14 @@ declare type SearchParamProps = {
 // ========================================
 
 declare type SignUpParams = {
-  firstName: string;
-  lastName: string;
-  address1: string;
-  city: string;
-  state: string;
-  postalCode: string;
-  dateOfBirth: string;
-  ssn: string;
+  firstName?: string;
+  lastName?: string;
+  address1?: string;
+  city?: string;
+  state?: string;
+  postalCode?: string;
+  dateOfBirth?: string;
+  ssn?: string;
   email: string;
   password: string;
 };
@@ -34,6 +35,7 @@ declare type User = {
   firstName: string;
   lastName: string;
   name: string;
+  name: string;
   address1: string;
   city: string;
   state: string;
@@ -41,6 +43,7 @@ declare type User = {
   dateOfBirth: string;
   ssn: string;
 };
+
 
 declare type NewUserParams = {
   userId: string;
@@ -211,7 +214,7 @@ declare interface TotalBalanceBoxProps {
 
 declare interface FooterProps {
   user: User;
-  type?: 'mobile' | 'desktop'
+  type?: "mobile" | "desktop";
 }
 
 declare interface RightSidebarProps {
@@ -221,7 +224,7 @@ declare interface RightSidebarProps {
 }
 
 declare interface SiderbarProps {
-  user: User;
+  user?: User | null; // Optional user, which can be null
 }
 
 declare interface RecentTransactionsProps {
