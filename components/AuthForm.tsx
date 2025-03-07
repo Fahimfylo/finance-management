@@ -22,6 +22,7 @@ import CustomInput from "./CustomInput";
 import { Loader2 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { signIn, signUp } from "@/lib/actions/user.actions";
+import PlaidLink from "./PlaidLink";
 
 const AuthForm = ({ type }: { type: string }) => {
   const router = useRouter();
@@ -56,7 +57,7 @@ const AuthForm = ({ type }: { type: string }) => {
           email: data.email,
           password: data.password,
         });
-        
+
         if (response) router.push("/");
       }
     } catch (error) {
@@ -91,9 +92,13 @@ const AuthForm = ({ type }: { type: string }) => {
           </p>
         </div>
       </header>
-      {user ? (
-        <div className="flex flex-col gap-4">{/* PlaidLink */}</div>
-      ) : (
+      {/* {user ? ( */}
+      
+        <div className="flex flex-col gap-4">
+          <PlaidLink user={user} variant="primary" />
+        </div>
+
+      {/* ) : ( */}
         <>
           <Form {...form}>
             <form
@@ -202,7 +207,7 @@ const AuthForm = ({ type }: { type: string }) => {
             </Link>
           </footer>
         </>
-      )}
+      {/* )} */}
     </section>
   );
 };
@@ -211,4 +216,3 @@ export default AuthForm;
 
 // pass :   fahim1010
 // id : fahim1@gmail.com
-
